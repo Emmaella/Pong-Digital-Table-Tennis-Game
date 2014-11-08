@@ -1,0 +1,28 @@
+//package Pong;
+	import java.awt.geom.Rectangle2D;
+public class Paddle {
+	
+	public class AIPaddle extends Rectangle2D.Double
+	{
+	    private final int pongHeight, pongWidth;
+	    private final double WIDTH = 20, HEIGHT = 60, SPEED;
+	    public AIPaddle(int x, int y, double speed, int pongWidth, int pongHeight){
+	        SPEED = speed;
+	        this.x = x;
+	        this.y = y;
+	        this.height = HEIGHT;
+	        this.width = WIDTH;
+	        this.pongHeight = pongHeight;
+	        this.pongWidth = pongWidth;
+	    }
+	    public void moveAi(double ballX, double ballY)	{
+	        if(ballX >= pongWidth/2)	{    
+	            if(ballY < y && y>=2)
+	                y-=SPEED;
+	            if(ballY >y && y+height <=pongHeight+10)
+	                y+=SPEED; 
+	        }
+	    }
+	    
+	}
+}
