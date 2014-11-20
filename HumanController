@@ -1,0 +1,19 @@
+import java.awt.event.*; 
+public class HumanController extends Paddle {
+
+	ArrowListener arrow = new ArrowListener();
+	KeyEvent e;
+	int keyCode = e.getKeyCode();
+	
+	
+	public void Update() {
+		//arrow.keyTyped(e);
+		e.getKeyCode();
+		arrow.keyPressed(e);
+		//arrow.keyReleased(e);
+		
+	}
+
+
+
+}
