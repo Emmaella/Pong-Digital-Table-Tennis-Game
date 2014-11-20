@@ -1,0 +1,40 @@
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
+public class JavaPong extends Frame{
+private static final long serialVersionUID = 1L;
+
+
+HumanController h = new HumanController();
+boolean canContinue = true;
+
+	public void Update() {
+		Graphics g = null;
+		while(canContinue){
+			BufferedImage b = new BufferedImage(720,720,BufferedImage.TYPE_INT_ARGB);
+			g = b.getGraphics();
+			g.setColor(Color.black);
+			g.fillRect(0, 0, getWidth(), getHeight());
+			//draw black rectangle
+			//redraw paddles, line, score
+			h.Update();
+			h.draw(g);
+			g = this.getGraphics();
+			g.drawImage(b,0,0,null);
+		}
+		if (g != null)
+			g.dispose();
+	}
+	public static void main (String [] args) {
+		
+		JavaPong frame = new JavaPong();
+		
+		frame.setSize(720, 720);
+		frame.setVisible(true);
+		frame.Update();
+		
+	}
+
+}
