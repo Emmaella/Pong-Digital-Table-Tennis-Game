@@ -1,0 +1,17 @@
+import java.awt.Graphics;
+
+//UPDATES
+public abstract class Entity {
+int x=0;
+int y=0;
+	
+	
+	public abstract void Update();
+		
+	
+	
+	public abstract void draw(Graphics g);
+	
+		
+	
+}
